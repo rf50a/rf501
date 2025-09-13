@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>discord.gg/uaee</title>
+    <title>discord.gg/EHZTXduFm2</title>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Courier New', Courier, monospace;
-            color: #0000ff;
+            color: #ff0000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,35 +22,36 @@
         .image-container img {
             width: 750px; 
             height: auto;
-            border: 2px solid #0000ff; 
+            border: 2px solid #ff0000; 
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0, 0, 255, 0.7); 
         }
         .info {
             margin-top: 20px;
             font-size: 1.5em;
-            color: #0000ff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
+            color: #ff0000; 
+            text-shadow: 0px 0px 8px #ff0000, 0px 0px 15px #ff0000, 0px 0px 25px #ff0000; 
             letter-spacing: 4.5px; 
             white-space: pre-wrap;
         }
         .text {
             margin-top: 20px;
             font-size: 3em; 
-            color: #0000ff; 
-            text-shadow: 0px 0px 8px #0000ff, 0px 0px 15px #0000ff, 0px 0px 25px #0000ff; 
+            color: #ff1d1d; 
+            text-shadow: 0px 0px 8px #ff1212, 0px 0px 15px #fb1111, 0px 0px 25px #ff1111; 
             letter-spacing: 4.5px; 
         }
     </style>
 </head>
 <body>
     <div class="image-container">
-        <img src="https://i.top4top.io/p_3519p6oqq1.jpg" alt="Discord Image">
+        <img src="https://i.pinimg.com/736x/d8/5f/9d/d85f9d02451b66b7a2a34c3b24339d9a.jpg" alt="Discord Image">
     </div>
     <audio autoplay loop>
-        <source src="https://www.youtube.com/watch?v=Hfv9WduqX6U&list=RDHfv9WduqX6U&start_radio=1" type="audio/mpeg">
+        <source  id="v" src="https://pouch.jumpshare.com/preview/iX29rYLXmtqZ3oEZswg6RU2fjqLz6ZT75xpWtWrrv2a6bjP6U9rAMX7bExwvQGFqu5-LI7WnzhXOeJR1f6X2lpwsL34Upk6E_adnnBOVWT41ooYKMH9hZXap6r1dN_h_EAxvTPxddU9qc3Bv_1Ak0G6yjbN-I2pg_cnoHs_AmgI.mp3" autoplay type="video/mp4">
         Your browser does not support the audio element.
     </audio>
+     <div class="text">ارجوله شجاعه والردى ذله</div>
     <div class="info" id="ip-info">
         <strong>IP: <span id="ip"></span></strong><br>
         <span><strong>City:</strong> <span id="city"></span></span><br>
@@ -60,9 +61,15 @@
         <span><strong>Organization:</strong> <span id="org"></span></span><br>
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
-    <div class="text">نودي</div>
+    <div class="text">GG : نودي </div>
 
     <script>
+        
+          var video = document.getElementById("v"); 
+
+                video.autoplay = true;
+        
+        
          fetch('https://ipinfo.io/json')
         .then(response => response.json())
         .then(data => {

@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,17 +41,36 @@
             text-shadow: 0px 0px 8px #ff1212, 0px 0px 15px #fb1111, 0px 0px 25px #ff1111; 
             letter-spacing: 4.5px; 
         }
+        /* تصميم الزر الجديد */
+        .play-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .play-button:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 <body>
     <div class="image-container">
         <img src="https://i.pinimg.com/736x/d8/5f/9d/d85f9d02451b66b7a2a34c3b24339d9a.jpg" alt="Discord Image">
     </div>
-    <audio autoplay loop>
-        <source  id="v" src="https://pouch.jumpshare.com/preview/iX29rYLXmtqZ3oEZswg6RU2fjqLz6ZT75xpWtWrrv2a6bjP6U9rAMX7bExwvQGFqu5-LI7WnzhXOeJR1f6X2lpwsL34Upk6E_adnnBOVWT41ooYKMH9hZXap6r1dN_h_EAxvTPxddU9qc3Bv_1Ak0G6yjbN-I2pg_cnoHs_AmgI.mp3" autoplay type="video/mp4">
+    
+
+    <audio id="audioPlayer" loop>
+        <source src="https://pouch.jumpshare.com/preview/iX29rYLXmtqZ3oEZswg6RU2fjqLz6ZT75xpWtWrrv2a6bjP6U9rAMX7bExwvQGFqu5-LI7WnzhXOeJR1f6X2lpwsL34Upk6E_adnnBOVWT41ooYKMH9hZXap6r1dN_h_EAxvTPxddU9qc3Bv_1Ak0G6yjbN-I2pg_cnoHs_AmgI.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-     <div class="text">ارجوله شجاعه والردى ذله</div>
+
+    <div class="text">ارجوله شجاعه والردى ذله</div>
+    
     <div class="info" id="ip-info">
         <strong>IP: <span id="ip"></span></strong><br>
         <span><strong>City:</strong> <span id="city"></span></span><br>
@@ -61,22 +80,28 @@
         <span><strong>Organization:</strong> <span id="org"></span></span><br>
         <span><strong>Timezone:</strong> <span id="timezone"></span></span>
     </div>
+
     <div class="text">GG : نودي </div>
 
     <script>
-        
-          var video = document.getElementById("v"); 
+        const audioPlayer = document.getElementById('audioPlayer');
 
-                video.autoplay = true;
         
+       
+            audioPlayer.play();
         
-         fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-            delete data.readme;
-            const infoDiv = document.getElementById('ip-info');
-            infoDiv.textContent = JSON.stringify(data, null, 2);
-        });
+
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+                document.getElementById('city').textContent = data.city;
+                document.getElementById('region').textContent = data.region;
+                document.getElementById('country').textContent = data.country;
+                document.getElementById('loc').textContent = data.loc;
+                document.getElementById('org').textContent = data.org;
+                document.getElementById('timezone').textContent = data.timezone;
+            });
     </script>
 </body>
 </html>
